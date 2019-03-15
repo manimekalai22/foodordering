@@ -1,0 +1,141 @@
+  <html>
+  <head>
+      <style>
+          #d1{
+              background-color: darkcyan;
+              color: azure;
+              height: 500px;
+              width: 25%;
+              margin: 10px;
+              top: 10px;
+              position: absolute;
+              padding: 20px 60px 20px 10px;
+              float: left;
+          }
+          #d2{
+               height: 500px;
+              width: 60%;
+              margin: 10px;
+            top:-25px;
+            left:350px;
+              position: absolute;
+              padding: 20px 10px 20px 10px;
+              float: right;
+              
+          }
+          #submit{
+                  background-color: #e7b44a;
+                  padding: 10px;
+                 margin-left:450px;
+                  padding-left:60px;
+                  padding-right: 60px;
+                  color: white;
+                  font-style: bold;
+                  border:none;
+                  
+              }
+               .p1{
+                  display: inline-block;
+                  border-bottom: 2px solid grey;
+                  margin: 0;
+                  padding: 0;
+                  color: red;
+                  font-size:10px;
+               }
+      </style>
+  </head>
+  <body>
+      <div style="background-color: darkcyan; opacity: 0.5; height: 70px; ">
+      </div>
+      <div id="d1">
+          <p style="color: cadetblue; font-size: 25px; font-weight: bold">Phone</p>
+          <p>OKLAHOMA CITY<br>
+         (405) 399-1028</p>
+          <p>TULSA<br>(916)399-1028</p>
+          <br>
+          <p style="color: cadetblue; font-size: 25px; font-weight: bold">Fax</p>
+      
+          <p>(916)399-1028</p>
+          <p style="color: cadetblue; font-size: 25px; font-weight: bold">Email</p>
+      
+          <p>GENERAL INQUIRIES<br>air@cafeevoke.com</p>
+          <p>CATERING INQUIRIES</p>
+          </div>
+      
+      
+      
+          <div id="d2">
+          <p style="background-color:#FC0; color:#FFF; padding:15px;">SEND US SOME ELECTRONIC MAIL</p><div style="background-color:#F5F5F5;"><form>
+          <table style="padding:5px;">
+          <tr><td>Your Name:</td><td><input style="background-color:#F5F5F5;border:none;border-bottom:thin solid black; width:400px; margin:10px;" type="text" id="name" name="name" required><p class="p1" id="err1"></p></td>
+          </tr>
+          <tr><td>Company:</td><td><input style="background-color:#F5F5F5;border:none;border-bottom:thin solid black; width:400px; margin:10px;" type="text" id="company" name="company" required><p class="p1" id="err2"></p></td>
+          </tr>
+          <tr><td>Email Address:</td><td><input style="background-color:#F5F5F5;border:none;border-bottom:thin solid black; width:400px; margin:10px;" type="email" id="email" name="email" required> <p class="p1" id="err3"></p></td>
+          </tr>
+          <tr><td>Phone Number:</td><td><input style="background-color:#F5F5F5;border:none;border-bottom:thin solid black; width:400px; margin:10px;" type="text" id="phno" name="phno" pattern="[0-9]{10}" required><p class="p1" id="err4"></p></td>
+          </tr>
+          <tr><td>Location (city):</td><td><input style="background-color:#F5F5F5;border:none;border-bottom:thin solid black; width:400px; margin:10px;" type="text" name="loc" id="loc" required><p class="p1" id="err5"></p></td>
+          </tr>
+          <tr><td>Message:</td><td><textarea id="msg" style="background-color:#C5C5C5;border:none;height:100px; width:400px; margin:10px;" required></textarea></td>
+          </tr>
+          <tr>
+          <td colspan="2"><p style="border-bottom:medium dotted black;"> <input type="submit" name="send"  id="submit" value="SEND" style="border-bottom:none;"></p>
+         
+          </td>
+          </tr>
+          </table></form></div>
+          </div>
+      
+      <script>
+          var btn=document.getElementById('submit');
+          btn.onclick=function(e){
+              check_validation();
+          }
+          function check_validation(){
+              var name=document.getElementById('name');
+              var company=document.getElementById('company');
+              var mail=document.getElementById('email');
+              var pno=document.getElementById('phno');
+              var city=document.getElementById('loc');
+              var msg=document.getElementById('msg');
+              document.getElementById("err3").innerHTML="";      
+              if(name.checkValidity)
+              {
+                  document.getElementById("err1").innerHTML=name.validationMessage;
+              }
+              if(company.checkValidity)
+              {
+                  document.getElementById("err2").innerHTML=company.validationMessage;
+              } 
+              if(mail.checkValidity)
+              {
+                  console.log("required");
+                  document.getElementById("err3").innerHTML=mail.validationMessage;
+              }
+              else{
+                  console.log("right");
+                  document.getElementById("err3").innerHTML=" ";   
+              }
+              if(pno.validity.valueMissing){
+                  //console.log("required");
+                  document.getElementById("err4").innerHTML=pno.validationMessage;
+              }
+              else if(pno.validity.patternMismatch){
+                  //console.log("wrong");
+               document.getElementById("err4").innerHTML="Invalid Phone Number";   
+              }
+              else{
+                  //console.log("right");
+                   document.getElementById("err4").innerHTML=" ";   
+              }
+              if(city.checkValidity){
+                   document.getElementById("err5").innerHTML=city.validationMessage;
+               }
+              if(msg.checkValidity){
+                  document.getElementById("msg").placeholder=msg.validationMessage;
+              }
+          }
+      </script>
+  </body>
+  </html>
