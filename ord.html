@@ -1,0 +1,225 @@
+
+	
+
+<html>
+<head>
+	<meta charset="UTF-8" />
+	<title>Cake Delights</title>
+	<link rel="stylesheet" type="text/css" href="css/style.css" />
+	<style type="text/css">
+		.container{
+			width: 40%;
+			margin: auto;
+			padding: 51px;
+			background-image: url(imagess/Aglio-Olio.jpg);
+		}
+		table{
+			margin: auto;
+            color: darkmagenta;
+            font-size: 17px;
+		}
+		body{
+	font:20px/1.5 Arial;
+}
+	section{
+			background-color: deeppink;
+			min-height: 400px;
+			padding-top: 70px;
+		}
+		
+input[type="submit"]{
+	padding: 10px;
+	border: 0;
+
+}
+        .errormessage
+        {
+            font-style: italic;
+            font-size: 15px;
+            color: red;
+            float: right;
+        }
+
+input[type="submit"]:hover{
+	cursor: pointer;
+	padding: 5px;
+	border: 0;
+	box-shadow: 5px 10px 8px #888888;
+	
+}
+
+footer{
+	width: 100%;
+	min-height: 60px;
+	background-color: blue;
+	padding-top: 20px;
+	text-align: center;
+
+}
+
+ul{
+            list-style-type: none;
+            margin-top: 5px;
+            padding: 0;
+            overflow: hidden;background-color: deepskyblue;
+        }
+        li
+        {
+            float: right;
+        }
+        li a
+        {
+            display: block;
+            color: brown;
+            text-align: center;
+            padding: 16px;
+            text-decoration: none;
+        }
+        li a:hover
+        {
+            background-color:antiquewhite;
+        }
+	</style>
+<body>
+	<header>
+
+    <div style="display: inline;border-bottom-color: darkgreen;border-bottom-style: inset;">
+       <img src="knead_logo.png" style=" width: 25%;margin-left:5%;height:20%">
+
+     <img src="peperoni_logo.png" style="height: 100%; width: 20%;margin-left: 10%;height:20%">
+                <img src="benvenuto.png" style=" width: 17%;margin-left: 22%;height:20%">
+            </div>
+ <div style="background-color: deepskyblue;height: 15%;font-size:20px;">
+       <p style="margin-left:70%;color:crimson;">Welcome Manimekalai!!!</p>
+          <ul><li><a  href="homepage.html" >logout</a></li> <li><a  href="next.html">profile</a></li></ul>   
+            
+        </div> 
+</header>
+	<section>
+		<form class="container"  method="get" novalidate action="display1.html">
+						<center><span>ORDER NOW</span></center>
+						<table>
+
+<tr>
+<td><br></td>
+</tr>
+<tr>
+<td>
+Name: </td>
+<td>
+<input type="text" id="name" name="name" required></td>
+</tr>
+    <tr>
+<td colspan="2" ><span id="err1" class="errormessage"></span><br></td>
+</tr>
+<tr>
+<td> Email Id: </td>
+<td><input type="email" name="email" id="email" required>
+</td>
+</tr>
+    <tr>
+<td colspan="2" ><span id="err2" class="errormessage"></span><br></td>
+</tr>
+<tr>
+<td> phone number </td>
+<td><input type="tel" name="ph" id="ph" maxlength="10" required>
+</td>
+</tr>
+    <tr>
+<td colspan="2" ><span id="err3" class="errormessage"></span><br></td>
+</tr>
+<tr>
+<td> Address: </td>
+<td><input type="text" name="add" id="add"  required>
+</td>
+</tr>
+    <tr>
+<td colspan="2" ><span id="err4" class="errormessage"><br></span></td>
+</tr>
+<tr>
+<td> Pickup Time: </td>
+<td> <input type="time" min="2019-03-15" name="bday" id="bday" required>
+</td>
+</tr>
+    <tr>
+<td colspan="2" ><span id="err5" class="errormessage"><br></span></td>
+</tr>
+
+<tr>
+<td colspan="2" > TOTAL:<input style="margin-left:65px" type="text" id="tot"  name="tot" readonly value="450">
+</td>	</tr>
+                            <tr><td colspan="2"></td><td><button  align="center" type="submit" id="ord" name="ord" >place order </button></td></tr>
+</table>   
+           
+					
+					</form></section>
+   
+		
+                         
+    <script>
+  
+
+
+       var btns=document.getElementById('ord');
+       function checking()
+       {
+           var checkes=1;
+           var names=document.getElementById('name');
+           if(names.checkValidity)
+	{
+	document.getElementById("err1").innerHTML=names.validationMessage;
+if(names.validationMessage.toString().length!=0)
+    checkes=0;
+	}
+           var email=document.getElementById('email');
+            if(email.checkValidity)
+	{
+	document.getElementById("err2").innerHTML=email.validationMessage;
+if(email.validationMessage.toString().length!=0)
+    checkes=0;
+	}
+            var pno=document.getElementById('ph');
+            if(pno.checkValidity)
+	{
+	document.getElementById("err3").innerHTML=pno.validationMessage;
+if(pno.validationMessage.toString().length!=0)
+    checkes=0;
+	}
+    
+           var addd=document.getElementById('add');
+            if(addd.checkValidity)
+	{
+	document.getElementById("err4").innerHTML=addd.validationMessage;
+if(addd.validationMessage.toString().length!=0)
+    checkes=0;
+	}
+           var time=document.getElementById('bday');
+            if(time.checkValidity)
+	{
+	document.getElementById("err5").innerHTML=time.validationMessage;
+if(time.validationMessage.toString().length!=0)
+    checkes=0;
+	}     
+          
+	if(checkes==0)
+        {
+            return false;
+        }
+           else{
+               return true;
+           }
+           
+       };
+       btns.onclick=function(e){ 
+           var checkes=checking();   
+                               if(checkes==false) 
+                                  e.preventDefault();
+                               
+                               };
+       </script>
+          
+         
+    
+
+</body>
+</html>

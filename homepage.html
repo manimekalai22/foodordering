@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>peperoni pizzaria </title>
+
+    <style>
+    .main-homepage {
+	background: url(main_bg.gif) no-repeat top center;
+	min-height: 800px;
+	width: 1024px;
+	margin: 0 auto;
+}
+.logo
+        {
+            background-image: url(peperoni_alt_logo.png); 
+            height: 150px;
+	width: 200px;
+            margin-left: 375px;
+            margin-top: 20px;
+            position: absolute;
+        }
+        
+        ul
+        {
+            list-style-type: none;
+            height: 400px;
+            width:200;
+            margin-left: 50px;
+            margin-top: 150px;
+            position: absolute;
+            padding: 30px 60px 20px 10px;
+            float:left;
+        }
+
+        li a{
+            display:block;
+            color:white;
+            padding: 8px 16px;
+            text-decoration: none;
+            font-size: 18px
+                
+        }
+        
+        li a:hover
+        {
+            color: orange;
+        }
+
+
+
+.mySlides {display:none;}
+
+.w3-content{display: inline-block;margin-left:260px;margin-top:220px;height: 550px;width: 550px}
+
+
+    </style>
+    
+</head>
+    <body class="main-homepage">
+        <header>
+                                <a href="m.html" style="float: right;margin-right: 70px;margin-top: 10px;width: 30px;height: 30px" >LOGIN</a>
+<a href="sample.html" style="float: right;margin-right: 50px;margin-top: 10px;width: 30px;height: 30px" >SIGNUP</a>
+
+            <img  style="float: right;margin-right: 10px;margin-top: 5px;width: 30px;height: 30px"src="th.jpg">
+
+        </header>
+        <header class="logo">
+        </header>
+        <nav>
+            <ul>
+            <li><a href="xx.html">about</a></li>
+            <li><a href="menu.html">menu</a></li>
+            <li><a href="gallery.html">gallery</a></li>
+            <li><a href="contact.html">contact</a></li>
+        </ul>
+        </nav>
+        <div>
+        </div>
+        
+              
+<div class="w3-content w3-section" style="max-width:500px">
+ <img class="mySlides" src="slide1.png" style="width:100%">
+  <img class="mySlides" src="slide2.png" style="width:100%">
+  <img class="mySlides" src="slide3.png" style="width:100%">
+
+</div>
+
+<script>
+var myIndex = 0;
+carousel();
+
+function carousel() {
+  var i;
+  var x = document.getElementsByClassName("mySlides");
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";  
+  }
+  myIndex++;
+  if (myIndex > x.length) {myIndex = 1}    
+  x[myIndex-1].style.display = "block";  
+  setTimeout(carousel, 2000); // Change image every 2 seconds
+}
+</script>
+
+</body>
+</html>

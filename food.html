@@ -1,0 +1,323 @@
+
+<html>
+<head>
+<title>food</title> 
+    <style>
+        header{
+            height: 160px;
+        }
+        
+        * {box-sizing: border-box}
+body {font-family: "Lato", sans-serif;}
+
+/* Style the tab */
+.tab {
+  float: left;
+  background-color: greenyellow;
+  width: 20%;
+  height: 140%;
+    
+}
+
+/* Style the buttons inside the tab */
+.tab button {
+  display: block;
+  background-color: inherit;
+  color: blueviolet;
+  padding: 22px 16px;
+    padding-left: 25%;
+  width: 100%;
+  border: none;
+  outline: none;
+  text-align: left;
+  cursor: pointer;
+  transition: 0.3s;
+  font-size: 19px;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+  background-color:chartreuse;
+}
+
+/* Create an active/current "tab button" class */
+.tab button.active {
+  color:orangered;
+}
+
+/* Style the tab content */
+.tabcontent {
+  float: left;
+  padding: 0px 12px;
+  width: 80%;
+  height: 140%;
+    background-color:hotpink;
+    color: yellow;
+}
+.btn {
+  border: 2px solid black;
+  background-color:orange;
+  color: black;
+  padding: 14px 28px;
+  font-size: 16px;
+  cursor: pointer;
+ margin-left: 50%;
+}
+
+/* Green */
+.success {
+  border-color: #4CAF50;
+  color: green;
+}
+        .success:hover {
+  background-color: #4CAF50;
+  color: white;
+}
+        ul{
+            list-style-type: none;
+            margin-top: 5px;
+            padding: 0;
+            overflow: hidden;background-color: deepskyblue;
+        }
+        li
+        {
+            float: right;
+        }
+        li a
+        {
+            display: block;
+            color: brown;
+            text-align: center;
+            padding: 16px;
+            text-decoration: none;
+        }
+        li a:hover
+        {
+            background-color:antiquewhite;
+        }
+
+    </style>
+</head>
+    <body>
+        
+        
+<header>
+
+    <div style="display: inherit;border-bottom-color: darkgreen;border-bottom-style: inset;width=100%">
+       <img src="knead_logo.png" style="height: 100%; width: 25%;margin-left:5%">
+
+     <img src="peperoni_logo.png" style="height: 100%; width: 20%;margin-left: 10%">
+                <img src="benvenuto.png" style="height: 40%; width: 17%;margin-left: 22%">
+            </div>
+</header>
+        <div style="background-color: deepskyblue;height: 15%;font-size:20px;">
+       <p style="margin-left:70%;color:crimson;">Welcome Manimekalai!!!</p>
+          <ul><li><a  href="homepage.html" >logout</a></li> <li><a  href="next.html">profile</a></li></ul>   
+            
+        </div> 
+        <div class="tab">
+  <button class="tablinks" onclick="openCity(event, 'Pizza')" id="defaultOpen">Pizza</button>
+  <button class="tablinks" onclick="openCity(event, 'Salad')">Salad</button>
+  <button class="tablinks" onclick="openCity(event, 'Pasta')">Pasta</button>
+<button class="tablinks" onclick="openCity(event, 'Antipasto')">Antipasto</button>
+
+</div>
+<form method="get" action="details.html">
+<div id="Pizza" class="tabcontent">
+  <h3>PIZZA</h3>
+    <br>
+    <br>
+    <table style="margin-left: 5%;">
+        <tr style="height: 100%;width: 100%;">
+            <td><img src="imagess/Chicken-Truffle.jpg" width="90%" height="50%"></td>
+            <td><img src="imagess/Frutti-Di-Mare.jpg" width="90%" height="50%"></td>
+                        <td><img src="imagess/Portobello.jpg" width="90%" height="60%"></td>
+        </tr>
+        <tr>
+        <td>
+            <br>
+        </td>
+        </tr>
+        <tr>
+        <td style="color: yellow;" ><p style="color: red"><b>CHICKEN-TRUFFLE (Rs.399)</b></p> 	<input type="radio" id="c1"  name="c1" value="yes">Yes <input type="radio"  id="c1" name="c1" value="No" checked="No">No</td> 
+         <td style="color: yellow" ><p style="color: mediumorchid"><b>FRUTTI-DI-MARE (Rs.259)</b></p> 	<input type="radio" id="c2"  name="c2" value="yes">Yes <input type="radio"  id="c2" name="c2" value="No" checked="No">No</td> 
+             <td style="color: yellow" ><p style="color: red"><b>PORTOBELLO (Rs.359)</b></p> 	<input type="radio" id="c3"  name="c3" value="yes">Yes <input type="radio"  id="c3" name="c3" value="No" checked="No">No</td> 
+        </tr>
+        <tr>
+        <td>
+            <br>
+        </td>
+        </tr>
+        <tr style="height: 100%;width: 100%;">
+            <td><img src="imagess/Funghi.jpg" width="90%" height="50%"></td>
+            <td><img src="imagess/Hawaiana.jpg" width="90%" height="50%"></td>
+         <td><img src="imagess/Margherita.jpg" width="90%" height="50%"></td>
+        </tr>
+        <tr>
+        <td>
+            <br>
+        </td>
+        </tr>
+        <tr>
+        <tr>
+        
+         <td style="color: yellow" ><p style="color: mediumorchid"><b>HAWAIANA (Rs.209)</b></p> <input type="radio" id="c5"  name="c5" value="yes">Yes <input type="radio"  id="c5" name="c5" value="No" checked="No">No</td> 
+             <td style="color: yellow" ><p style="color: red"><b>MARGHERITA (Rs.229)</b></p> <input type="radio" id="c6"  name="c6" value="yes">Yes <input type="radio"  id="c6" name="c6" value="No" checked="No">No</td> 
+            <td style="color: yellow;" ><p style="color: red"><b>FUNGHI (Rs.299)</b></p> 	<input type="radio" id="c4"  name="c4" value="yes">Yes <input type="radio"  id="c4" name="c4" value="No" checked="No">No</td> 
+        </tr>
+    </table>
+</div>
+
+<div id="Salad" class="tabcontent">
+ <h3>SALAD</h3>
+    <br>
+    <br>
+    <table style="margin-left: 5%;">
+        <tr style="height: 100%;width: 100%;">
+            <td><img src="imagess/Classic-Burrata.jpg" width="90%" height="50%"></td>
+            <td><img src="imagess/Rocket-Parma.jpg" width="90%" height="50%"></td>
+        </tr>
+        <tr>
+        <td>
+            <br>
+        </td>
+        </tr>
+        <tr>
+        <td style="color: yellow;" ><p style="color: red"><b>CLASSIC-BURRATA (Rs.299)</b></p> 	<input type="radio" id="c7"  name="c7" value="yes">Yes <input type="radio"  id="c7" name="c7" value="No" checked="No">No</td> 
+         <td style="color: yellow" ><p style="color: mediumorchid"><b>ROCKET-PARMA (Rs.309)</b></p> 	<input type="radio" id="c8"  name="c8" value="yes">Yes <input type="radio"  id="c8" name="c8" value="No" checked="No">No</td> 
+             
+        </tr>
+        <tr>
+        <td>
+            <br>
+        </td>
+        </tr>
+        <tr style="height: 100%;width: 100%;">
+            <td><img src="imagess/Chicken-Caesar.jpg" width="90%" height="50%" checked="No"></td>
+            <td><img src="imagess/Chopped-Kale.jpg" width="90%" height="50%" checked="No"></td>
+        </tr>
+        <tr>
+        <td>
+            <br>
+        </td>
+        </tr>
+        <tr>
+        <tr>
+        <td style="color: yellow;" ><p style="color: red"><b>CHICKEN-CAESAR (Rs.329)</b></p> 	<input type="radio" id="c9"  name="c9" value="yes">Yes <input type="radio"  id="c9" name="c9" value="No" checked>No</td> 
+         <td style="color: yellow" ><p style="color: mediumorchid"><b>CHOPPED-KALE (Rs.289)</b></p> 	<input type="radio" id="c10"  name="c10" value="yes">Yes <input type="radio"  id="c10" name="c10" value="No" checked>No</td> 
+            
+        </tr>
+        
+    </table>
+</div>
+
+<div id="Pasta" class="tabcontent">
+  <h3>PASTA</h3>
+    <br>
+    <br>
+    <table style="margin-left: 5%;">
+        <tr style="height: 100%;width: 100%;">
+            <td><img src="imagess/Aglio-Olio.jpg" width="90%" height="50%"></td>
+            <td><img src="imagess/Pesce.jpg" width="90%" height="50%"></td>
+                        <td><img src="imagess/Vongole.jpg" width="90%" height="50%"></td>
+        </tr>
+        <tr>
+        <td>
+            <br>
+        </td>
+        </tr>
+        <tr>
+        <td style="color: yellow;" ><p style="color: red"><b>AGLIO-OLIO (Rs.179)</b></p> 	<input type="radio" id="c11"  name="c11" value="yes">Yes <input type="radio"  id="c11" name="c11" value="No" checked>No</td> 
+         <td style="color: yellow" ><p style="color: mediumorchid"><b>PESCE (Rs.259)</b></p> 	<input type="radio" id="c12"  name="c12" value="yes">Yes <input type="radio"  id="c12" name="c12" value="No" checked>No</td> 
+             <td style="color: yellow" ><p style="color: red"><b>VONGOLE (Rs.149)</b></p> 	<input type="radio" id="c13"  name="c13" value="yes">Yes <input type="radio"  id="c13" name="c13" value="No" checked>No</td> 
+        </tr>
+        <tr>
+        <td>
+            <br>
+        </td>
+        </tr>
+        <tr style="height: 100%;width: 100%;">
+            <td><img src="imagess/Amatriciana.jpg" width="90%" height="50%"></td>
+            <td><img src="imagess/Bolognese.jpg" width="90%" height="50%"></td>
+         <td><img src="imagess/Arrabbiata.jpg" width="90%" height="50%"></td>
+        </tr>
+        <tr>
+        <td>
+            <br>
+        </td>
+        </tr>
+        <tr>
+        <tr>
+        <td style="color: yellow;" ><p style="color: red"><b>AMATRICIANA (Rs.139)</b></p> 	<input type="radio" id="c14"  name="c14" value="yes">Yes <input type="radio"  id="c14" name="c14" value="No" checked>No</td> 
+         <td style="color: yellow" ><p style="color: mediumorchid"><b>BOLOGNESE (Rs.99)</b></p> <input type="radio" id="c15"  name="c15" value="yes">Yes <input type="radio"  id="c15" name="c15" value="No" checked>No</td> 
+             <td style="color: yellow" ><p style="color: red"><b>ARRABBIATA (Rs.109)</b></p> <input type="radio" id="c16"  name="c16" value="yes">Yes <input type="radio"  id="c16" name="c16" value="No" checked>No</td> 
+        </tr>
+    </table>
+</div>
+        
+<div id="Antipasto" class="tabcontent">
+  <h3>ANTIPASTO</h3>
+    <br>
+    <br>
+    <table style="margin-left: 5%;">
+        <tr style="height: 100%;width: 100%;">
+            <td><img src="imagess/Meatball-Al-Forno.jpg" width="90%" height="50%"></td>
+            <td><img src="imagess/Crispy-Portobello-and-Chicken.jpg" width="90%" height="50%"></td>
+        </tr>
+        <tr>
+        <td>
+            <br>
+        </td>
+        </tr>
+        <tr>
+        <td style="color: yellow;" ><p style="color: red"><b>MEATBALL-AL-FORNO (Rs.279)</b></p> 	<input type="radio" id="c17"  name="c17" value="yes">Yes <input type="radio"  id="c17" name="c17" value="No" checked>No</td> 
+         <td style="color: yellow" ><p style="color: mediumorchid"><b>CRISPY-PORTOBELLO-CHICKEN (Rs.209)</b></p> 	<input type="radio" id="c18"  name="c18" value="yes">Yes <input type="radio"  id="c18" name="c18" value="No" checked>No</td> 
+             
+        </tr>
+        <tr>
+        <td>
+            <br>
+        </td>
+        </tr>
+        <tr style="height: 100%;width: 100%;">
+            <td><img src="imagess/Crispy-Portobello-and-Summer-Vegetable.jpg" width="90%" height="50%"></td>
+            <td><img src="imagess/Roasted-Cauliflower.jpg" width="90%" height="50%" ></td>
+        </tr>
+        <tr>
+        <td>
+            <br>
+        </td>
+        </tr>
+        <tr>
+        <tr>
+        <td style="color: yellow;" ><p style="color: red"><b>CRISPY-PORTOBELLO-VEGETABLE (Rs.139)</b></p> 	<input type="radio" id="c19"  name="c19" value="yes">Yes <input type="radio"  id="c19" name="c19" value="No" checked>No</td> 
+         <td style="color: yellow" ><p style="color: mediumorchid"><b>ROASTED CAULIFLOWER (Rs.99)</b></p> <input type="radio" id="c20"  name="c20" value="yes">Yes <input type="radio"  id="c20" name="c20" value="No" checked>No</td> 
+             
+        </tr>
+    </table>
+</div>        
+<script>
+function openCity(evt, cityName) {
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablinks");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+  document.getElementById(cityName).style.display = "block";
+  evt.currentTarget.className += " active";
+}
+
+// Get the element with id="defaultOpen" and click on it
+document.getElementById("defaultOpen").click();
+</script>
+<div style="background-color:antiquewhite;">
+        <button id="food" name="food" class="btn success">Add TO Cart</button>
+
+</div>
+    </form>
+    </body>
+</html>

@@ -1,0 +1,16 @@
+{
+             $conn = mysqli_connect("localhost","root","","project");
+    $name=$_POST['username'];
+    $pass=$_POST['password'];
+
+   if(!$conn)
+{
+    die ('could not connect'.mysql_error());
+}
+ $res=msqli_query("SELECT * FROM register WHERE name='$name' and password='$pass'")  or   die ('could not connect'.mysql_error());
+$row=mysqli_fetch_array($res);
+    if($row>0)
+{
+header("location:reister\sample.php");
+exit();
+}

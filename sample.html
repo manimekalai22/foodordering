@@ -1,0 +1,134 @@
+	<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>RegistrationForm</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<!-- LINEARICONS -->
+		<link rel="stylesheet" href="fonts/linearicons/style.css">
+		
+		<!-- STYLE CSS -->
+		<link rel="stylesheet" href="css/style.css">
+	</head>
+
+	<body>
+
+		<div class="wrapper">
+			<div class="inner">
+				<img src="images/image-1.png" alt="" class="image-1">
+				<form method="get" novalidate action="m.html">
+					<h3>New Account?</h3>
+					<div class="form-holder">
+						<span class="lnr lnr-user"></span>
+						<input type="text" class="form-control"  id="uname" name="uname" pattern="[a-zA-Z]*$" placeholder="Username" required><p id="err1" style="float:right;margin-top:-20px;color:red;font-style:italic"></p>
+					</div>
+					<div class="form-holder">
+						<span class="lnr lnr-phone-handset"></span>
+						<input type="tel" class="form-control" id="phoneno" maxlength="10" name="phoneno" placeholder="Phone Number" pattern="[0-9]{10}" required><p id="err2" style="float:right;margin-top:-20px;color:red;font-style:italic"></p>
+					</div>
+					<div class="form-holder">
+						<span class="lnr lnr-envelope"></span>
+						<input type="email" class="form-control" id="mail" name="mail" required placeholder="Mail"><p id="err3" style="float:right;margin-top:-20px;color:red;font-style:italic"></p>
+					</div>
+					<div class="form-holder">
+						<span class="lnr lnr-lock"></span>
+						<input type="password" class="form-control" name="password" id="password" placeholder="Password" required>
+                        <p id="err4" style="float:right;margin-top:-20px;color:red;font-style:italic"></p>
+					</div>
+					<div class="form-holder">
+						<span class="lnr lnr-lock"></span>
+						<input type="password" class="form-control" name="cpassword" id="cpassword" placeholder="Confirm Password" required>
+                        <p id="err5" style="float:right;margin-top:-20px;color:red;font-style:italic"></p>
+					</div>
+					<button value="bttn"id="btnSend" name="register">
+					<span> REGISTER</span>
+                    </button>
+				</form>
+				<img src="images/image-2.png" alt="" class="image-2">
+			</div>
+			
+		</div>
+		<script>       
+       var btns=document.getElementById('btnSend');
+       function checking()
+       {
+           var checkes=1;
+           var names=document.getElementById('uname');
+           if(names.checkValidity)
+	{
+	document.getElementById("err1").innerHTML=names.validationMessage;
+if(names.validationMessage.toString().length!=0)
+    checkes=0;
+	}
+           if(names.validity.patternMismatch){
+                  //console.log("wrong");
+               document.getElementById("err1").innerHTML="Invalid Name";
+    }
+    var pno=document.getElementById('phoneno');
+
+       if(pno.checkValidity)
+	{
+	document.getElementById("err2").innerHTML=pno.validationMessage;
+         if(pno.validationMessage.toString().length!=0)
+                 checkes=0;
+    }
+    if(pno.validity.patternMismatch){
+                  //console.log("wrong");
+               document.getElementById("err2").innerHTML="Invalid Phone Number";
+    }
+           var mailid=document.getElementById('mail');
+
+       if(mailid.checkValidity)
+	{
+	document.getElementById("err3").innerHTML=mailid.validationMessage;
+         if(mailid.validationMessage.toString().length!=0)
+                 checkes=0;
+    }
+                var pass=document.getElementById('password');
+
+           if(pass.checkValidity)
+	{
+	document.getElementById("err4").innerHTML=pass.validationMessage;
+if(pass.validationMessage.toString().length!=0)
+    checkes=0;
+	}
+           var cpass=document.getElementById('cpassword');
+
+           if(cpass.checkValidity)
+	{
+	document.getElementById("err5").innerHTML=cpass.validationMessage;
+if(cpass.validationMessage.toString().length!=0)
+    checkes=0;
+	}
+           
+           
+           if (pass.value != cpass.value) {
+                document.getElementById("err5").innerHTML = 'Passwords must match.';
+                checkes=0;
+            }
+            
+        
+
+	if(checkes==0)
+        {
+            return false;
+        }
+           else{
+               return true;
+           }
+           
+       };
+       btns.onclick=function(e){ 
+           var checkes=checking();   
+                               if(checkes==false) 
+                                  e.preventDefault();
+                               
+                               };
+       </script>
+        
+        
+        
+        
+		</body>
+</html>

@@ -1,0 +1,202 @@
+
+<html>
+<head>
+<title>payment</title> 
+    <style>
+        header{
+            height: 160px;
+        }
+        
+        * {box-sizing: border-box}
+body {font-family: "Lato", sans-serif;}
+
+.container{
+			width: 40%;
+			margin: auto;
+			padding: 51px;
+			background-image: url(imagess/Aglio-Olio.jpg);
+		}
+
+ .errors{
+        font-size: 14px;
+        color: purple;
+        font-style: italic;
+     
+        }
+/* Green */
+.success {
+  border-color: #4CAF50;
+  color: green;
+}
+        .success:hover {
+  background-color: #4CAF50;
+  color: white;
+}
+       
+   ul{
+            list-style-type: none;
+            margin-top: 5px;
+            padding: 0;
+            overflow: hidden;
+      background-color: deepskyblue;
+        }
+        li
+        {
+            float: right;
+        }
+        li a
+        {
+            display: block;
+            color: brown;
+            text-align: center;
+            padding: 16px;
+            text-decoration: none;
+        }
+        li a:hover
+        {
+            background-color:antiquewhite;
+        }
+        .s
+        {
+            background-color: hotpink;
+            height: 100%;
+        }
+        table
+        {
+margin-left: 20% ;          font-size: 20px;
+            height: 10%;
+            width: 50%;
+            font-size:30px;
+            background-image: url(imagess/Amatriciana.jpg);
+        }
+
+    </style>
+</head>
+    <body >
+        
+        
+<header>
+
+    <div style="display: inherit;border-bottom-color: darkgreen;border-bottom-style: inset;width=100%">
+       <img src="knead_logo.png" style="height: 100%; width: 25%;margin-left:5%">
+
+     <img src="peperoni_logo.png" style="height: 100%; width: 20%;margin-left: 10%">
+                <img src="benvenuto.png" style="height: 40%; width: 17%;margin-left: 22%">
+            </div>
+</header>
+        <div style="background-color: deepskyblue;height: 15%;font-size:20px;">
+       <p style="margin-left:70%;color:crimson;">Welcome Manimekalai !!!</p>
+          <ul> <li><a  href="homepage.html">logout</a></li> <li><a  href="next.php" >profile</a></li></ul>   
+            
+        </div> 
+        
+        <form  class="container" action="final.html">
+		<label>Card Type:</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                <select name="type" >
+                                <option value="debit">Debit Card</option>
+        						<option value="credit">Credit Card</option>
+                                </select>  
+     <br><br>
+     <label>Expiry Date:</label>&nbsp;&nbsp;&nbsp;
+     		<select name="month">
+    				<option>Jun</option>
+        			<option>Feb</option>
+				<option>Mar</option>
+				<option>May</option>
+				<option>Jun</option>
+				<option>July</option>
+				<option>Aug</option>
+				<option>Sep</option>
+				<option>Oct</option>
+				<option>Nov</option>	
+				<option>Dec</option>
+    		</select>
+		<select name="year">
+    			<option>2015</option><option>2016</option>
+                <option>2017</option><option>2018</option>
+                <option>2019</option><option>2020</option>
+                <option>2021</option><option>2022</option>
+                <option>2023</option><option>2024</option>
+                <option>2025</option><option>2026</option>
+                <option>2027</option><option>2028</option>
+                <option>2030</option><option>2031</option>
+                <option>2032</option><option>2033</option>
+                <option>2034</option><option>2035</option>
+                <option>2036</option><option>2037</option>
+                <option>2038</option><option>2039</option>
+                <option>2040</option><option>2041</option>
+                <option>2042</option><option>2043</option>
+                <option>2044</option><option>2045</option>
+                <option>2046</option><option>2047</option>
+                <option>2048</option><option>2049</option><option>2050</option>
+    		</select>
+        <br><br>
+	<label for="cardno">Card No:</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		<input id="1" name="num" placeholder="Number" maxlength="16" required="" type="text"><span id="err1" class="errors"></span><br><br>
+	<label for="name">Card Name:</label>&nbsp;&nbsp;&nbsp;
+		<input id="2" name="name" placeholder="Name" required="" type="text"><span id="err2" class="errors"></span><br><br>
+    
+	<label for="password">CVV No:</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		<input id="3" name="cvv" placeholder="Number" maxlength="3" required="" type="password"><span id="err3" class="errors"></span><br><br>
+    
+	<label for="password">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Pin:</label>&nbsp;&nbsp;
+									&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		<input id="4" name="password" placeholder="Number" maxlength="4" required="" type="password"><span id="err4" class="errors"></span><br><br><br>
+
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input style="font-size:14px;padding:10px;background-color:palegreen;color:blue"type="submit" id="sub" name="submit" value="Ok" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		<input style="font-size:14px;padding:10px;background-color:palegreen;color:blue"type="reset" name="reset" value="Reset" />
+</form> 
+
+     <script>       
+       var btns=document.getElementById('sub');
+       function checking()
+       {
+           var checkes=1;
+           var names=document.getElementById('1');
+           if(names.checkValidity)
+	{
+	document.getElementById("err1").innerHTML=names.validationMessage;
+if(names.validationMessage.toString().length!=0)
+    checkes=0;
+	}
+       var names2=document.getElementById('2');
+           if(names2.checkValidity)
+	{
+	document.getElementById("err2").innerHTML=names2.validationMessage;
+if(names2.validationMessage.toString().length!=0)
+    checkes=0;
+	}
+           var names3=document.getElementById('3');
+           if(names3.checkValidity)
+	{
+	document.getElementById("err3").innerHTML=names3.validationMessage;
+if(names3.validationMessage.toString().length!=0)
+    checkes=0;
+	}
+           var names4=document.getElementById('4');
+           if(names4.checkValidity)
+	{
+	document.getElementById("err4").innerHTML=names4.validationMessage;
+if(names4.validationMessage.toString().length!=0)
+    checkes=0;
+	}
+          
+	if(checkes==0)
+        {
+            return false;
+        }
+           else{
+               return true;
+           }
+           
+       };
+       btns.onclick=function(e){ 
+           var checkes=checking();   
+                               if(checkes==false) 
+                                  e.preventDefault();
+                               
+                               };
+       </script>
+             
+    </body>
+</html>
